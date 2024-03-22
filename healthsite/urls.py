@@ -17,23 +17,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from rest_framework import routers
-# from healthapp.views import UserViewSet
-from healthapp.views import ListUsers, CustomAuthToken
-from healthapp.views import RegisterUser, LoginUser
-from rest_framework.authtoken import views
-
-
-# router = routers.DefaultRouter()
-# router.register(r'users', UserViewSet)
+from healthapp.views import ListUsers
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/users/', ListUsers.as_view()),
-    path('api/token/auth/', CustomAuthToken.as_view()),
-    path('api/register/', RegisterUser.as_view(), name='register'),
-    path('api/login/', LoginUser.as_view(), name='login')
-    # path('api-auth/', include('rest_framework.urls')),
-    # path('', include(router.urls)),
-    # path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
-    # path('api-token-auth/', views.obtain_auth_token)
+    path('api/healthapp/', include('healthapp.urls'))
 ]
