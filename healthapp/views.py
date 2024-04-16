@@ -3,9 +3,7 @@ from rest_framework import permissions, serializers, viewsets, status
 from django.contrib.auth.models import User
 from healthapp.serializers import UserSerializer
 from rest_framework.views import APIView
-from rest_framework.response import Response
-from rest_framework import authentication, permissions
-from django.contrib.auth.models import User
+from rest_framework import authentication
 from rest_framework.authtoken.views import ObtainAuthToken
 from rest_framework.authtoken.models import Token
 from rest_framework.response import Response
@@ -36,11 +34,6 @@ def user_register_view(request):
             token = Token.objects.get(user=account).key
             data['token'] = token
             
-            # refresh = RefreshToken.for_user(account)
-            # data['token'] = {
-            #     'refresh': str(refresh),
-            #     'access': str(refresh.access_token)
-            # }
         else:
             data = serializer.errors
         return Response(data)
