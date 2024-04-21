@@ -43,35 +43,36 @@ The project is built on the Django framework and Django REST Framework. The appl
 ## Setup
 1. Clone the Repository
 
-`git clone https://github.com/Przychodnia123/health-backend.git`
+    `git clone https://github.com/Przychodnia123/health-backend.git`
 
 2. Create and Activate Virtual Environment
 
-`python -m venv myenv`
-source myenv/bin/activate  # On Windows, use: myenv\Scripts\activate
+    `python -m venv myenv`
+    `source myenv/bin/activate`  # On Windows, use: `myenv\Scripts\activate`
 
 3. Environment Configuration
 Create a `.env` file in the root directory and add the following configurations:
-`DEBUG=True`
-    
-For local development, you also add the `SECRET_KEY`:
-    
-`SECRET_KEY='your_secret_key_here'`
+    `DEBUG=True`
+
+    `SECRET_KEY=your_secret_key_here`
     
 
 
 4. Install Dependencies
-`pip install -r requirements.txt`
 
-
+    `pip install -r requirements.txt`
 
 5. Database Migration
-`python manage.py makemigrations`
-`python manage.py migrate`
+
+    `python manage.py makemigrations`
+
+    `python manage.py migrate`
     
 
 **Run the Project**:
-`python manage.py runserver``
+
+`python manage.py runserver`
+
 
 ## Notes
 Ensure you have configured the appropriate local settings and updated the `.env` file with keys and configuration settings. **Important**: Always keep your `SECRET_KEY` confidential and do not expose it on GitHub or any public repositories.
