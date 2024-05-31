@@ -56,3 +56,17 @@ class ListUsers(APIView):
         usernames = [user.username for user in User.objects.all()]
     
         return Response(usernames)
+
+class Dashboard(APIView):
+    authentication_classes = [authentication.TokenAuthentication]
+    permission_classes = [permissions.IsAuthenticated]
+
+    def get(self, request, format=None):
+        current_user = request.user
+        user_data = {
+            'username': current_user.username,
+            'email': current_user.email,
+            'is_staff': current_user.is_staff,
+        }
+        return Response(user_data)
+        

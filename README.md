@@ -39,6 +39,12 @@ The project is built on the Django framework and Django REST Framework. The appl
   - Key: `Authorization`
   - Value: `token 'your_token_here'`
 
+#### User Dashboard
+- **URL**: `http://localhost:8000/api/healthapp/dashboard/`
+- **Method**: `GET`
+- **Headers Required**:
+  - Key: `Authorization`
+  - Value: `token 'your_token_here'`
 
 ## Setup
 1. Clone the Repository
